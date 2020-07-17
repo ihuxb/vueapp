@@ -87,3 +87,7 @@ npm install popper.js --save
 npm install --save vue-router
 vue ui
 ```
+
+### QA
+提交远程库报错，“refusing to merge unrelated histories”。
+```git pull origin master --allow-unrelated-histories```
