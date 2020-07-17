@@ -1,6 +1,9 @@
 # 说明
 vue+api的结合
 
+# 构建状态
+[![Build Status](https://cloud.drone.io/api/badges/huxb-home/vueapp/status.svg)](https://cloud.drone.io/huxb-home/vueapp)
+
 # 要求
 nodejs、vuejs、asp.net core api 3.1
 
