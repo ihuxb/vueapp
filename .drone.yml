@@ -26,10 +26,10 @@ steps:
       - npm install
       - npm run build
    
-   # 3.推送 docker hub
-   - name: publish
-   image: plugins/docker
-   settings:
+  # 3.推送 docker hub
+  - name: publish
+    image: plugins/docker
+    settings:
       username:
         from_secret:dockerhub_username
       password:
