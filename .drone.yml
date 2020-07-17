@@ -6,27 +6,18 @@ name: vueapp
 # drone构建步骤
 # 无拷贝到本地流程
 steps:
-  # 1..NET 构建
-  - name: .net build
+  # 1.构建
+  - name: build
     pull: if-not-exists
-    image: mcr.microsoft.com/dotnet/core/sdk:3.1
+    image: plugins/docker
     commands:
       # 开始构建
-      - dotnet restore
-      - dotnet build -c Release
+      - docker pull mcr.microsoft.com/dotnet/core/sdk:3.1
+      - docker pull node:latest
+      - dotnet publish -o app
       - echo 项目生成成功
-
-  # 2.node 构建
-  - name: vue build
-    pull: if-not-exists
-    image: node:latest
-    commands:
-      # 开始构建
-      - cd src/vueapp/clientapp
-      - npm install
-      - npm run build
    
-  # 3.推送 docker hub
+  # 2.推送 docker hub
   - name: publish
     pull: if-not-exists
     image: plugins/docker
@@ -36,6 +27,7 @@ steps:
       password:
         from_secret: dockerhub_password
       repo: dkww/vueapp
+      dockerfile: Dockerfile
       tags:
       - 1.0.0
       - 1.0
