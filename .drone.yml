@@ -25,6 +25,19 @@ steps:
       - cd src/vueapp/clientapp
       - npm install
       - npm run build
+   
+   # 3.推送 docker hub
+   - name: publish
+   image: plugins/docker
+   settings:
+      username:
+        from_secret:dockerhub_username
+      password:
+        from_secret:dockerhub_password
+      repo: dkww/vueapp
+      tags:
+      - 1.0.0
+      - 1.0
 
 
 # drone执行触发器
