@@ -6,7 +6,7 @@ name: vueapp
 # drone构建步骤
 # 无拷贝到本地流程
 steps:
-   1.构建
+  # 1.构建
   - name: build
     pull: if-not-exists
     image: 1stquad/dotnet-nodejs
