@@ -9,7 +9,7 @@ steps:
   # 1.构建
   - name: build
     pull: if-not-exists
-    image: 1stquad/dotnet-nodejs
+    image: schaumtier/dotnetcore-sonar-node
     commands:
       # 开始构建
       - dotnet publish -o app
