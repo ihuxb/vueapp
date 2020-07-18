@@ -6,16 +6,26 @@ name: vueapp
 # drone构建步骤
 # 无拷贝到本地流程
 steps:
-  # 1.构建
+  # 1.node安装
+  - name: node
+    pull: if-not-exists
+    image: node:latest
+    commands:
+      # 开始构建
+      - node -v
+      - npm -v
+
+  # 2.构建
   - name: build
     pull: if-not-exists
-    image: schaumtier/dotnetcore-sonar-node
+    image: mcr.microsoft.com/dotnet/core/sdk:3.1
     commands:
       # 开始构建
       - dotnet publish -o app
       - echo 项目生成成功
+
    
-  # 2.推送 docker hub
+  # 3.推送 docker hub
   - name: publish
     pull: if-not-exists
     image: plugins/docker
