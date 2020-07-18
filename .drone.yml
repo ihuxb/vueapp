@@ -22,10 +22,13 @@ steps:
     image: node:latest
     commands:
       # 开始构建
+      - ls
+      - ls src/vueapp/bin/Release/netcoreapp3.1
       - cd src/vueapp/clientapp
       - npm install
       - npm run build
-      - cp -r src/vueapp/clientapp/dist src/vueapp/bin/Release/netcoreapp3.1/clientapp
+      - pwd
+      - cp -r dist src/vueapp/bin/Release/netcoreapp3.1/clientapp
 
    
   # 3.推送 docker hub
