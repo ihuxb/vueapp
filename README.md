@@ -1,8 +1,10 @@
 # 说明
 vue+api的结合
 
-# 构建状态
+# 状态
 [![Build Status](https://cloud.drone.io/api/badges/huxb-home/vueapp/status.svg)](https://cloud.drone.io/huxb-home/vueapp)
+
+[![镜像](https://img.shields.io/badge/Docker-vueapp-blue.svg)](https://hub.docker.com/r/dkww/vueapp)
 
 # 要求
 nodejs、vuejs、asp.net core api 3.1
@@ -92,5 +94,5 @@ vue ui
 ```
 
 ### QA
-提交远程库报错，“refusing to merge unrelated histories”。
+提交远程库报错，“refusing to merge unrelated histories”。  
 ```git pull origin master --allow-unrelated-histories```
