@@ -6,14 +6,12 @@ name: vueapp
 # drone构建步骤
 # 无拷贝到本地流程
 steps:
-  # 1.构建
+   1.构建
   - name: build
     pull: if-not-exists
-    image: docker:latest
+    image: 1stquad/dotnet-nodejs
     commands:
       # 开始构建
-      - docker pull mcr.microsoft.com/dotnet/core/sdk:3.1
-      - docker pull node:latest
       - dotnet publish -o app
       - echo 项目生成成功
    
