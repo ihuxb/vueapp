@@ -42,9 +42,7 @@ steps:
         from_secret: dockerhub_password
       repo: dkww/vueapp
       dockerfile: Dockerfile
-      tags:
-      - 1.0.0
-      - 1.0
+      auto_tag: true
 
 
 # drone执行触发器
