@@ -9,7 +9,7 @@ steps:
   # 1..NET 构建
   - name: .net build
     pull: if-not-exists
-    image: mcr.microsoft.com/dotnet/core/sdk:3.1
+    image: mcr.microsoft.com/dotnet/core/sdk:3.1.412-buster-arm32v7
     commands:
       # 开始构建
       - dotnet restore
