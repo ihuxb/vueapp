@@ -4,7 +4,7 @@ type: docker
 name: vueapp
 platform:
   os: linux
-  arch: amd
+  arch: arm
 
 # drone构建步骤
 # 无拷贝到本地流程
